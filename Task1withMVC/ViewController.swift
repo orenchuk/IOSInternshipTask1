@@ -16,7 +16,11 @@ class ViewController: UIViewController {
     
     @IBAction func showResult() {
         if let strFrom = stringFromField.text, let strTo = stringToField.text {
-            resultField.text = transform(from: strFrom, to: strTo)
+            if strFrom == strTo {
+                resultField.text = "They're already equal"
+            } else {
+                resultField.text = transform(from: strFrom, to: strTo)
+            }
         }
 
     }
